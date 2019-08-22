@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static "css/mystyle.css" %} ">
+
+
+
+    <title>Hello User</title>
+  </head>
+  <body>
+    <h1>User's Info</h1>
+    {{user_info}}
+
+    <div class="userInfo">
+
+      {% if user_info %}
+
+      {% for user in user_info %}
+
+      <h2>User Name : {{user.firstName}}</h2>
+        <p>e-mail : {{user.email}}
+        <p>lastname :{{ user.lastName}}
+      {% endfor %}
+
+      {% else %}
+      <h3>NO User Info Found</h3>
+
+      {% endif %}
+
+    </div>
+
+
+
+
+  </body>
+</html>

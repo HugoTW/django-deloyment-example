@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="{% static "css/mystyle.css" %}">
+  </head>
+  <body>
+    <h1>Hello me </h1>
+
+    <div class="djangotwo">
+
+      {% if access_records %}
+
+      <table>
+        <thead>
+          <th>site name</th>
+          <th>Date Accessed</th>
+        </thead>
+
+        {% for acc in access_records %}
+        <tr>
+          <td> {{ acc.name }}</td>
+          <td> {{ acc.date }}</td>
+        </tr>
+        {% endfor %}
+
+      </table>
+      {% else %}
+      <p> NO access records found</p>
+
+      {% endif %}
+
+
+
+    </div>
+
+    <!-- {{ insert_hugo }} -->
+    <!-- {{access_records}} -->
+
+    <h1>Show me one image</h1>
+    <img src=" {% static "images/image.png" %}" alt="No File FOund">
+    <!-- <img src="{% static "first_app/images/djangoguitar.jpg" %}" alt="Uh Oh, didn't show!"> -->
+
+    </body>
+</html>
